@@ -1,0 +1,8 @@
+specVersion: '0.1'
+metadata:
+  name: async-demo-app
+type: application
+# builder:
+#   customTasks:
+#   - name: babel
+#     beforeTask: generateComponentPreload
