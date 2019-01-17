@@ -1,8 +1,17 @@
+---
 specVersion: '0.1'
+type: application
 metadata:
   name: async-demo-app
-type: application
-# builder:
-#   customTasks:
-#   - name: babel
-#     beforeTask: generateComponentPreload
+builder:
+    customTasks:
+    - name: Transpile
+      afterTask: replaceVersion
+---
+specVersion: "0.1"
+kind: extension
+type: task
+metadata:
+    name: Transpile
+task:
+    path: lib/Transpile.js

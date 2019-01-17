@@ -19,6 +19,10 @@
         "@openui5/themelib_sap_belize": "^1.52.5"
     },
     "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/core": "^7.2.0",
+        "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+        "@babel/preset-env": "^7.2.0",
         "@ui5/cli": "^0.2.0",
         "eslint": "^4.19.1",
         "karma": "^2.0.2",
