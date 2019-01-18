@@ -5,18 +5,39 @@ sap.ui.define([
 ], function(Controller, formatter, mockApi) {
     "use strict";
 
+
+    var getTeamsFilledWithStaff = async function() {
+        const aTeams = await mockApi.getTeams();
+        const aAgreggatedTeams = [];
+        for (const team of aTeams) {
+            const aStaff = []
+            for (const staffId of team.aStaffMembersIds) {
+                const oStaff = await mockApi.getStaffById(staffId);
+                aStaff.push(oStaff);
+            }
+            aAgreggatedTeams.push({
+                sName: team.sName,
+                sStatus: team.sStatus,
+                aStaff: aStaff
+            });
+        }
+        return aAgreggatedTeams;
+    }
+
+
     return Controller.extend("ro.valdfernoaga.asyncdemo.controller.App", {
 
         formatter: formatter,
 
-        onInit: function() {
-            console.log("I'm in in init()");
-        },
+
+        onInit: function() {},
         onAfterRendering: function() {
             console.log("I'm in in onAfterRendering()")
-            mockApi.getStaff().then((data) => {
-                console.log(data)
-            });
+            getTeamsFilledWithStaff().then((teams => {
+                console.log(teams);
+            }));
+
         }
+
     });
 });

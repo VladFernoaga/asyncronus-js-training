@@ -14,4 +14,4 @@ type: task
 metadata:
     name: Transpile
 task:
-    path: lib/Transpile.js
+    path: lib/Transpile.js 

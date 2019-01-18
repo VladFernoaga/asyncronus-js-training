@@ -33,6 +33,7 @@
         "karma-qunit": "^1.2.1",
         "qunitjs": "^2.4.1",
         "rimraf": "^2.6.2",
-        "start-server-and-test": "^1.4.1"
+        "start-server-and-test": "^1.4.1",
+        "@types/openui5": "^1.40.2"
     }
 }

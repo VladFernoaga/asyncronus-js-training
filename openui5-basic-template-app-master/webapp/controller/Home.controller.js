@@ -9,14 +9,7 @@ sap.ui.define([
 
         formatter: formatter,
 
-        onInit: function() {
-            console.log("I'm in in init()");
-        },
-        onAfterRendering: function() {
-            console.log("I'm in in onAfterRendering()")
-            mockApi.getStaff().then((data) => {
-                console.log(data)
-            });
-        }
+        onInit: function() {},
+        onAfterRendering: function() {}
     });
 });
